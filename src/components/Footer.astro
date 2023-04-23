@@ -1,0 +1,54 @@
+---
+import { primaryColor } from "../css/common";
+---
+
+<footer>
+    <!-- <div style="padding: 0 300px; display: flex; align-items: center; height: inherit;"> -->
+    <div class="links">
+        <img src="/logo192.png" alt="home" />
+
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Data Protection Policy</a>
+        <div>
+            <img src="/logo192.png" alt="home" />
+            <img src="/logo192.png" alt="home" />
+            <img src="/logo192.png" alt="home" />
+        </div>
+    </div>
+
+    <span class="trademark">@2023 INTRAMU LLC, All Rights Reserved</span>
+    <!-- </div> -->
+</footer>
+<style define:vars={{ primaryColor }}>
+    footer {
+        display: flex;
+        align-items: center;
+        padding: 0 300px;
+        background-color: var(--primaryColor);
+        height: 8em;
+        position: relative;
+    }
+    a {
+        color: white;
+    }
+    .links {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    img {
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .trademark {
+        position: absolute;
+        color: grey;
+        bottom: 5%;
+        right: 50%;
+        transform: translate(50%, 0%);
+        font-size: 0.8em;
+    }
+</style>
