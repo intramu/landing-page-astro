@@ -38,14 +38,27 @@ import { primaryColor } from "../css/common";
 </header>
 
 <script>
+    const {
+        PUBLIC_DOMAIN,
+        PUBLIC_CLIENT_ID,
+        PUBLIC_REDIRECT_URI,
+        PUBLIC_RESPONSE_TYPE,
+        PUBLIC_SCOPE,
+        PUBLIC_ADDITIONAL_PARAMS,
+    } = import.meta.env;
+
+    const loginUrl = `https://${PUBLIC_DOMAIN}/authorize?response_type=${PUBLIC_RESPONSE_TYPE}&client_id=${PUBLIC_CLIENT_ID}&redirect_uri=${PUBLIC_REDIRECT_URI}&scope=${PUBLIC_SCOPE}${
+        PUBLIC_ADDITIONAL_PARAMS ?? ""
+    }`;
+
+    const signupUrl = loginUrl.concat("&screen_hint=signup");
+
     document.getElementById("login")!.addEventListener("click", () => {
-        window.location.href =
-            "https://dev-5p-an07k.us.auth0.com/authorize?response_type=token&client_id=fSMneHc4uoLgAmfFZA9WUyHWULdXku4O&redirect_uri=http://localhost:5173/redirect&scope=all: application all:organization openid email profile";
+        window.location.href = loginUrl;
     });
 
     document.getElementById("signup")!.addEventListener("click", () => {
-        window.location.href =
-            "https://dev-5p-an07k.us.auth0.com/authorize?response_type=token&client_id=fSMneHc4uoLgAmfFZA9WUyHWULdXku4O&redirect_uri=http://localhost:5173/redirect&scope=all: application all:organization openid email profile&screen_hint=signup";
+        window.location.href = signupUrl;
     });
 </script>
 
