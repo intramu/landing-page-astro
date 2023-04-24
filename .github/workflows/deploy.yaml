@@ -19,7 +19,6 @@ jobs:
         runs-on: ubuntu-latest
         environment:
             name: github-pages
-            PUBLIC_CLIENT_ID: ${{ vars.PUBLIC_CLIENT_ID }}
         steps:
             - name: Checkout your repository using git
               uses: actions/checkout@v3
@@ -36,7 +35,6 @@ jobs:
         environment:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
-            PUBLIC_DOMAIN: ${{ vars.PUBLIC_DOMAIN }}
         steps:
             - name: Print out client id
               run: echo "Client id - ${{ vars.PUBLIC_CLIENT_ID }}"
