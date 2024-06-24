@@ -6,15 +6,15 @@ const { title, frontmatter } = Astro.props;
 ---
 
 <style define:vars={{ markdownWidth }}>
-  .container {
-    max-width: var(--markdownWidth);
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
+    .container {
+        max-width: var(--markdownWidth);
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
 </style>
-<Home title={frontmatter.title ?? title ?? "Intramu"}>
-  <div class="container">
-    <slot />
-  </div>
+<Home title={frontmatter?.title ?? title ?? "Intramu"}>
+    <div class="container">
+        <slot />
+    </div>
 </Home>
