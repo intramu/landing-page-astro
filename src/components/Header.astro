@@ -1,0 +1,97 @@
+---
+import { accent, mainWidth } from "../styles/common";
+---
+
+<style define:vars={{ accent, mainWidth }}>
+  header {
+    min-height: 100px;
+    max-width: var(--mainWidth);
+    width: 100%;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9em;
+  }
+
+  .logo {
+    height: 120px;
+    width: 120px;
+  }
+  .logo-container {
+    text-align: center;
+    flex: 0.9;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+  }
+  button {
+    border-radius: 25px;
+  }
+  .login {
+    display: flex;
+    flex-direction: row;
+    min-width: 250px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #signup {
+    border: 1px solid var(--accent);
+  }
+  #login {
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px 0px 15px;
+  }
+</style>
+<header>
+  <div class="container">
+    <nav>
+      <a href="/">
+        <img class="icons" src="/home.png" />
+      </a>
+      <a href="#">Mobile App</a>
+      <a href="#">Schools</a>
+      <a href="#">Testimonials</a>
+    </nav>
+    <div class="logo-container">
+      <a href="/">
+        <img class="logo" src="/intramulogo.png" />
+      </a>
+    </div>
+    <nav>
+      <a href="about-us">About Us</a>
+      <a href="contact-us">Contact Us</a>
+      <span class="login">
+        <span style="flex: 1; text-align: right;">
+          <button id="signup">Sign Up</button>
+        </span>
+        <span
+          style={{
+            fontSize: ".8em",
+            // maxWidth: "2em",
+            margin: "0px 10px 0px 10px",
+          }}>OR</span
+        >
+        <span style="flex: 1; text-align: left;">
+          <button id="login"
+            >Log In
+            <span style="margin-left: .4em;"
+              ><img class="icons" src="/home.png" /></span
+            >
+          </button>
+        </span>
+      </span>
+    </nav>
+  </div>
+</header>

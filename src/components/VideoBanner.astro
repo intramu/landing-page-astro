@@ -1,0 +1,20 @@
+---
+import { accent } from "../styles/common";
+
+// probably do some video fetching here
+---
+
+<style define:vars={{ accent }}>
+  .videoBanner {
+    border-radius: 5px;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--accent);
+  }
+</style>
+<div class="videoBanner">
+  <video loop autoplay style="width: 100%;">
+    <source src="/soccer_testvideo.mp4" type="video/mp4" />
+  </video>
+</div>

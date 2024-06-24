@@ -1,12 +1,115 @@
 ---
-import Intro from "../components/home/Intro.astro";
-import MobileApp from "../components/home/MobileApp.astro";
-import SchoolsTestimonials from "../components/home/SchoolsTestimonials.astro";
-import Common from "../layouts/Common.astro";
+import VideoBanner from "../components/VideoBanner.astro";
+import Home from "../layouts/Home.astro";
+import { accent } from "../styles/common";
 ---
 
-<Common title="Intramu">
-    <Intro />
-    <!-- <MobileApp /> -->
-    <!-- <SchoolsTestimonials /> -->
-</Common>
+<style define:vars={{ accent }}>
+  button {
+    border: 1px solid var(--accent);
+    padding: 0 15px 0px 15px;
+    margin: 15px 0;
+  }
+  #intro {
+    width: 100%;
+    height: 90vh;
+    text-align: center;
+  }
+  .intro_container {
+    padding: 80px 0 80px 0;
+  }
+  #mobile_app {
+    height: 70vh;
+  }
+  #mobile_app img {
+    height: 500px;
+    width: 250px;
+  }
+  #schools_tests {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+  }
+  #schools_tests > * {
+    flex: 1;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+</style>
+<Home title="Home">
+  <div id="intro">
+    <VideoBanner />
+
+    <div class="intro_container">
+      <span style="font-size: 2em;">
+        <b>INTRAMU&trade;</b> is the better solution for managing intramural sports.
+      </span>
+      <br />
+      <button style="">Find out why.</button>
+      <br />
+      <span style="font-size: 2em;">^</span>
+    </div>
+  </div>
+  <div id="mobile_app">
+    <h2>The Intramu mobile app:</h2>
+    <hr />
+    <!-- <img src="./phone.jpeg" /> -->
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <p style="flex: .8; font-size: 1.5em;">
+        Intramu is your app for all things intramural sports! Find leagues,
+        create teams, track stats, and connect with teammates - all in one
+        place. It's the easiest way to join the fun and get active, whether
+        you're a competitive athlete or just looking for a casual game. Download
+        Intramu and experience the thrill of competition and the joy of
+        teamwork!
+      </p>
+      <div class="mobile_container" style="flex: 1; text-align: right;">
+        <img src="/phone.png" />
+        <img src="/phone.png" />
+        <img src="/phone.png" />
+      </div>
+    </div>
+  </div>
+  <div id="schools_tests">
+    <div>
+      <h2>Schools:</h2>
+      <hr />
+      <pre>
+"At GCU, we're committed to fostering a vibrant and inclusive campus community. Intramu has been a game-changer in achieving this goal. The app has significantly increased student participation in intramural sports, offering a fun and accessible way for students of all abilities to get active and connect with each other.
+
+Here's how Intramu has benefited our university:
+
+- Increased Participation: The ease of use and streamlined organization with the Intramu app have led to a dramatic rise in student engagement with intramural sports. We've seen a surge in the number of teams formed and leagues filled.
+- Enhanced Inclusivity: The app caters to a wide range of sports interests and skill levels. Students can find activities that suit their preferences, whether they're seasoned athletes or just looking for a casual experience.
+- Improved Campus Spirit: Intramural sports create a natural platform for healthy competition and school pride. The app facilitates communication and team building, fostering a stronger sense of community among students.
+- Reduced Administrative Burden: Intramu handles much of the administrative work associated with running intramural sports. This frees up valuable staff time and resources, allowing us to focus on other student life initiatives.
+
+Overall, Intramu has been a resounding success at [University Name]. We highly recommend the app to any university looking to promote student engagement, well-being, and a more vibrant campus life."
+
+- Stevan Perrino, Department of Gaming, GCU
+      </pre>
+      <button>Check out more schools</button>
+    </div>
+    <div>
+      <h2>Testimonials:</h2>
+      <hr />
+      <pre>
+Let's be honest, college can be stressful. Between classes, assignments, and the social scene, it's easy to forget about your well-being. That's where Intramu stepped in for me. It wasn't just about joining a basketball team (although winning that championship was pretty sweet!), it became my go-to for stress relief, social connection, and even a little time management practice.
+
+Here's why Intramu is a must-have for any college student:
+
+- The Perfect Break: After hours hunched over textbooks, intramural games were a fantastic way to blow off steam and get some exercise. It was energizing and a great mood booster – plus, it helped me sleep better too!
+- Instant Friend Zone: Joining a team through the Intramu app was the easiest way to meet new people. We bonded over shared interests, celebrated victories (and commiserated losses) together, and created some awesome memories outside the classroom.
+- Time Management Ninja: The app kept me organized! I could easily see schedules, communicate with teammates, and stay on top of deadlines – all in one place. It actually helped me manage my overall school schedule better, believe it or not!
+- Beyond Sports: Intramu offered a variety of activities, not just traditional sports. I tried out a kickball league for a change, and it was a blast! It caters to everyone, regardless of your athletic background.
+
+Intramu became more than just an app – it became a part of my college experience. It helped me stay active, build friendships, and even manage my time effectively. If you're looking for a way to add some fun, fitness, and friends to your college life, download Intramu – you won't regret it!
+
+- David C., Computer Science Major
+      </pre>
+      <button>Check out more testimonials</button>
+    </div>
+  </div>
+</Home>
