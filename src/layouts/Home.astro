@@ -1,0 +1,77 @@
+---
+import FooterHome from "../components/Footer_Home.astro";
+import Header from "../components/Header.astro";
+import { base, mainWidth, accent } from "../styles/common";
+// import "../styles/globals.css";
+
+const { title } = Astro.props;
+---
+
+<style define:vars={{ base, mainWidth }}>
+  html {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: var(--base);
+
+    padding: 0;
+    margin: 0;
+
+    align-items: center;
+  }
+
+  body :global(.icons) {
+    width: 18px;
+    height: 18px;
+  }
+  main {
+    flex: 1;
+    max-width: var(--mainWidth);
+    width: 100%;
+    padding: 50px 0 50px 0;
+  }
+</style>
+<style is:global define:vars={{ accent }}>
+  * {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: initial;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    border-radius: 25px;
+    border: 1px solid var(--accent);
+    padding: 0 15px 0 15px;
+  }
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <FooterHome />
+  </body>
+</html>

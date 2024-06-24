@@ -1,0 +1,56 @@
+---
+import { accent } from "../styles/common";
+---
+
+<style define:vars={{ accent }}>
+  footer {
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100px;
+    flex: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    min-width: 600px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+
+  a {
+    color: white;
+    font-size: 0.7em;
+  }
+
+  .trademark {
+    position: absolute;
+    bottom: 5%;
+    left: 50;
+    color: grey;
+    font-size: 0.6em;
+  }
+</style>
+<footer>
+  <div class="container">
+    <img class="icons" src="/home.png" />
+    <a href="terms-conditions">Terms and Conditions</a>
+    <a href="privacy-policy">Privacy Policy</a>
+    <a href="data-protection-policy">Data Protection Policy</a>
+    <div>
+      <img class="icons" src="/home.png" />
+      <img class="icons" src="/home.png" />
+      <img class="icons" src="/home.png" />
+    </div>
+  </div>
+  <span class="trademark">@ 2023 INTRAMU LLC, All Rights Reserved</span>
+</footer>

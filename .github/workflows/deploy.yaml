@@ -36,8 +36,6 @@ jobs:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
         steps:
-            - name: Print out client id
-              run: echo "Client id - ${{ vars.PUBLIC_CLIENT_ID }}"
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v1
