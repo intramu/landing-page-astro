@@ -7,6 +7,8 @@ This is the typical stylish landing page to attract attention and look cool for 
 
 This is a complete work in progress and is up to redesign by Stevan
 
-Ultimately this should offer a cool looking login and signup page that will redirect users to the webapp
+Ultimately this should offer a cool looking login and signup page that will redirect users to the main web application
 
-@nroerig
+## Authors
+
+-   [@noahr1936](https://github.com/noahr1936)
